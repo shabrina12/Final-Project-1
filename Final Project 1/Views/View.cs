@@ -34,12 +34,12 @@ namespace Final_Project_1.Views
 
         public void Success(string message)
         {
-            Console.WriteLine($"Data has been {message}");
+            Console.WriteLine($"Data berhasil {message}");
         }
 
         public void Failure(string message)
         {
-            Console.WriteLine($"Data has not been {message}");
+            Console.WriteLine($"Data tidak berhasil {message}");
         }
 
         public void DataNotFound()

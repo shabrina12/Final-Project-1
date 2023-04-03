@@ -5,7 +5,6 @@ using Final_Project_1.Controllers;
 using Final_Project_1.Models;
 using Final_Project_1.Repositories;
 using Final_Project_1.Views;
-using Final_Project_1.Context;
 
 namespace Final_Project_1;
 public class Program
@@ -27,7 +26,8 @@ public class Program
             Console.WriteLine("3. Insert New Book");
             Console.WriteLine("4. Update Book");
             Console.WriteLine("5. Delete Book");
-            Console.Write("Input (1-5): ");
+            Console.WriteLine("6. Exit");
+            Console.Write("Input (1-6): ");
 
             input = int.Parse(Console.ReadLine());
             Console.Clear();
@@ -85,6 +85,9 @@ public class Program
                     Console.Write("Input Id dari buku yang mau dihapus: ");
                     id = int.Parse(Console.ReadLine());
                     bukuController.DeleteBuku(id);
+                    break;
+                case 6:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid input!");                    
