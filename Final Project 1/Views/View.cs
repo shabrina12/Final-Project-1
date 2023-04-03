@@ -9,7 +9,7 @@ namespace Final_Project_1.Views
 {
     public class VBuku
     {
-        public void GetAll(List<Buku> books)
+        public void GetAllBuku(List<Buku> books)
         {
             foreach (var book in books)
             {

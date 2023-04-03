@@ -36,7 +36,7 @@ public class Program
             {
                 case 1:
                     Console.WriteLine("================= BOOK INFORMATION ===================");
-                    bukuController.GetAll();
+                    bukuController.GetAllBuku();
                     break;
                 case 2:
                     Console.Write("Input id dari buku yang ingin dicari: ");

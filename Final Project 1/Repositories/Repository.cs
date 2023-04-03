@@ -13,10 +13,9 @@ using Final_Project_1.Models;
 
 namespace Final_Project_1.Repositories
 {
-    //https://github.com/fahrihanif/SIBKM_Batch4/blob/main/Connection/Controllers/RegionController.cs
     public class BukuRepository : IBukuRepository
     {
-        public List<Buku> GetAll()
+        public List<Buku> GetAllBuku()
         {
             List<Buku> books = new List<Buku>();
 

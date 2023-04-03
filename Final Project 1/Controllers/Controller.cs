@@ -22,14 +22,14 @@ namespace Final_Project_1.Controllers
         }
 
         // GET ALL
-        public void GetAll()
+        public void GetAllBuku()
         {
-            var books = _bukuRepository.GetAll();
+            var books = _bukuRepository.GetAllBuku();
             if (books == null)
             {
                 _vBuku.DataNotFound();
             }
-            _vBuku.GetAll(books);
+            _vBuku.GetAllBuku(books);
         }
 
         // GET BY ID
