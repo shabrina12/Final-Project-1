@@ -1,8 +1,8 @@
 # Final-Project-1
 
 ## Database diagram used in this project
-![Diagram](./images/database_diagram.png)
+![Diagram](./Final Project 1/database_diagram.png)
 
 ## Screenshot 
 
-![Result](./images/result.png)
+![Menu Console App](./Final Project 1/result.png)
