@@ -70,7 +70,7 @@ public class Program
                     Console.Write("Input Nama Penerbit Baru: ");
                     var penerbit1 = Console.ReadLine();
                     Console.Write("Input Tahun Rilis Baru: ");
-                    var tahun1 = Console.ReadLine();
+                    var tahun1 = Console.ReadLine();                    
                     bukuController.UpdateBuku(new Buku
                     {
                         id = id1,

@@ -25,22 +25,22 @@ namespace Final_Project_1.Controllers
         public void GetAllBuku()
         {
             var books = _bukuRepository.GetAllBuku();
-            if (books == null)
+            if (books != null)
             {
-                Console.WriteLine("Data buku tidak ditemukan");
+                _vBuku.GetAllBuku(books);               
             }
-            _vBuku.GetAllBuku(books);
+            Console.WriteLine("Data buku tidak ditemukan");
         }
 
         // GET BY ID
         public void GetBukuById(int id)
         {
             var book = _bukuRepository.GetBukuById(id);
-            if (book == null)
+            if (book != null)
             {
-                Console.WriteLine("Data buku tidak ditemukan");
+                _vBuku.GetBukuById(book);                
             }
-            _vBuku.GetBukuById(book);
+            Console.WriteLine("Data buku tidak ditemukan");
         }
 
         // INSERT
