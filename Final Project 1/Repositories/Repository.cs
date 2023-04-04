@@ -49,9 +49,9 @@ namespace Final_Project_1.Repositories
             return books;
         }
 
-        public List<Buku> GetBukuById(int id)
+        public Buku GetBukuById(int id)
         {
-            List<Buku> books = new List<Buku>();
+            Buku book = new Buku();
 
             connection = new SqlConnection(ConnectionString);
 
@@ -73,7 +73,7 @@ namespace Final_Project_1.Repositories
                     Console.WriteLine("Pengarang: " + reader[2]);
                     Console.WriteLine("Penerbit: " + reader[3]);
                     Console.WriteLine("Tahun: " + reader[4]);
-                    Console.WriteLine("===============================");                    
+                    Console.WriteLine("===============================");
                 }
             }
             else
@@ -82,7 +82,7 @@ namespace Final_Project_1.Repositories
             }
             reader.Close();
             connection.Close();
-            return books;
+            return book;
         }
 
         public int InsertBuku(Buku buku)

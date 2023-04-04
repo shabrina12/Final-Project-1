@@ -28,8 +28,10 @@ namespace Final_Project_1.Controllers
             if (books != null)
             {
                 _vBuku.GetAllBuku(books);               
-            }
-            Console.WriteLine("Data buku tidak ditemukan");
+            } else
+            {
+                Console.WriteLine("Data buku tidak ditemukan");
+            }            
         }
 
         // GET BY ID
@@ -39,8 +41,10 @@ namespace Final_Project_1.Controllers
             if (book != null)
             {
                 _vBuku.GetBukuById(book);                
+            } else
+            {
+                Console.WriteLine("Data buku tidak ditemukan");
             }
-            Console.WriteLine("Data buku tidak ditemukan");
         }
 
         // INSERT

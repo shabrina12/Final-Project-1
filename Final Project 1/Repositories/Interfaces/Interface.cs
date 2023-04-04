@@ -10,7 +10,7 @@ namespace Final_Project_1.Repositories.Interfaces
     public interface IBukuRepository
     {
         List<Buku> GetAllBuku();
-        List<Buku> GetBukuById(int id);
+        Buku GetBukuById(int id);
         int InsertBuku(Buku buku);
         int UpdateBuku(Buku buku);
         int DeleteBuku(int id);

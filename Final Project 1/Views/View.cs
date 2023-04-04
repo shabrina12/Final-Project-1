@@ -13,7 +13,6 @@ namespace Final_Project_1.Views
         {
             foreach (var book in books)
             {
-                Console.WriteLine("=================");
                 Console.WriteLine("Id: " + book.id);
                 Console.WriteLine("Judul: " + book.judul);
                 Console.WriteLine("Pengarang: " + book.pengarang);
@@ -24,17 +23,11 @@ namespace Final_Project_1.Views
 
         public void GetBukuById(Buku book)
         {
-            Console.WriteLine("=================");
             Console.WriteLine("Id: " + book.id);
             Console.WriteLine("Judul: " + book.judul);
             Console.WriteLine("Pengarang: " + book.pengarang);
             Console.WriteLine("Penerbit: " + book.penerbit);
             Console.WriteLine("Tahun: " + book.tahun);
-        }
-
-        internal void GetBukuById(List<Buku>? book)
-        {
-            throw new NotImplementedException();
         }
     }
 }
