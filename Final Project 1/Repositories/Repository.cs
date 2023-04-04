@@ -5,10 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.PortableExecutable;
 using Final_Project_1.Repositories.Interfaces;
-using static System.Reflection.Metadata.BlobBuilder;
-//using Final_Project_1.Context;
 using Final_Project_1.Models;
 
 namespace Final_Project_1.Repositories
@@ -40,12 +37,12 @@ namespace Final_Project_1.Repositories
                     Console.WriteLine("Pengarang: " + reader[2]);
                     Console.WriteLine("Penerbit: " + reader[3]);
                     Console.WriteLine("Tahun: " + reader[4]);
-                    Console.WriteLine("====================");                    
+                    Console.WriteLine("================================");                    
                 }
             }
             else
             {
-                return null;
+                Console.WriteLine("Data buku kosong!");
             }
             reader.Close();
             connection.Close();
@@ -76,12 +73,12 @@ namespace Final_Project_1.Repositories
                     Console.WriteLine("Pengarang: " + reader[2]);
                     Console.WriteLine("Penerbit: " + reader[3]);
                     Console.WriteLine("Tahun: " + reader[4]);
-                    Console.WriteLine("====================");                    
+                    Console.WriteLine("===============================");                    
                 }
             }
             else
             {
-                Console.WriteLine("data not found!");
+                Console.WriteLine("Data buku tidak ditemukan!");
             }
             reader.Close();
             connection.Close();
@@ -89,13 +86,14 @@ namespace Final_Project_1.Repositories
         }
 
         public int InsertBuku(Buku buku)
-        {
-            var result = 0;
+        {           
             connection = new SqlConnection(ConnectionString);
 
             connection.Open();
 
             SqlTransaction transaction = connection.BeginTransaction();
+
+            var result = 0;
 
             try
             {
@@ -131,17 +129,27 @@ namespace Final_Project_1.Repositories
                 result = command.ExecuteNonQuery();
 
                 transaction.Commit();
+
+                if (result > 0)
+                {
+                    Console.WriteLine("Data berhasil ditambahkan!");
+                }
+                else
+                {
+                    Console.WriteLine("Data gagal ditambahkan!");
+                }
                 connection.Close();
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     transaction.Rollback();
                 }
-                catch (Exception exception)
+                catch (Exception rollback)
                 {
-                    throw;
+                    Console.WriteLine(rollback.Message);
                 }
             }
             return result;
@@ -149,12 +157,13 @@ namespace Final_Project_1.Repositories
 
         public int UpdateBuku(Buku buku)
         {
-            var result = 0;
             connection = new SqlConnection(ConnectionString);
 
             connection.Open();
 
             SqlTransaction transaction = connection.BeginTransaction();
+
+            var result = 0;
 
             try
             {
@@ -196,30 +205,39 @@ namespace Final_Project_1.Repositories
                 result = command.ExecuteNonQuery();
 
                 transaction.Commit();
+                if (result > 0)
+                {
+                    Console.WriteLine("Data berhasil diubah!");
+                }
+                else
+                {
+                    Console.WriteLine("Data gagal diubah!");
+                }
                 connection.Close();
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     transaction.Rollback();
                 }
-                catch (Exception exception)
+                catch (Exception rollback)
                 {
-                    throw;
+                    Console.WriteLine(rollback.Message);
                 }
             }
             return result;
         }
 
         public int DeleteBuku(int id)
-        {
-            var result = 0;
+        {          
             connection = new SqlConnection(ConnectionString);
 
             connection.Open();
 
             SqlTransaction transaction = connection.BeginTransaction();
+            var result = 0;
 
             try
             {
@@ -237,17 +255,27 @@ namespace Final_Project_1.Repositories
                 result = command.ExecuteNonQuery();
 
                 transaction.Commit();
+
+                if (result > 0)
+                {
+                    Console.WriteLine("Data berhasil dihapus!");
+                }
+                else
+                {
+                    Console.WriteLine("Data gagal dihapus!");
+                }
                 connection.Close();
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     transaction.Rollback();
                 }
-                catch (Exception exception)
+                catch (Exception rollback)
                 {
-                    throw;
+                    Console.WriteLine(rollback.Message);
                 }
             }
             return result;

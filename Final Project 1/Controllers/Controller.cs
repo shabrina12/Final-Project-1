@@ -27,7 +27,7 @@ namespace Final_Project_1.Controllers
             var books = _bukuRepository.GetAllBuku();
             if (books == null)
             {
-                _vBuku.DataNotFound();
+                Console.WriteLine("Data buku tidak ditemukan");
             }
             _vBuku.GetAllBuku(books);
         }
@@ -38,7 +38,7 @@ namespace Final_Project_1.Controllers
             var book = _bukuRepository.GetBukuById(id);
             if (book == null)
             {
-                _vBuku.DataNotFound();
+                Console.WriteLine("Data buku tidak ditemukan");
             }
             _vBuku.GetBukuById(book);
         }
@@ -49,11 +49,11 @@ namespace Final_Project_1.Controllers
             var result = _bukuRepository.InsertBuku(buku);
             if (result > 0)
             {
-                _vBuku.Success("inserted");
+                Console.WriteLine("Data berhasil ditambah");
             }
             else
             {
-                _vBuku.Failure("insert");
+                Console.WriteLine("Data tidak berhasil ditambah");
             }
         }
 
@@ -63,11 +63,11 @@ namespace Final_Project_1.Controllers
             var result = _bukuRepository.UpdateBuku(buku);
             if (result > 0)
             {
-                _vBuku.Success("updated");
+                Console.WriteLine("Data berhasil diubah");
             }
             else
             {
-                _vBuku.Failure("update");
+                Console.WriteLine("Data tidak berhasil diubah");
             }
         }
 
@@ -77,11 +77,11 @@ namespace Final_Project_1.Controllers
             var result = _bukuRepository.DeleteBuku(id);
             if (result > 0)
             {
-                _vBuku.Success("deleted");
+                Console.WriteLine("Data berhasil dihapus");
             }
             else
             {
-                _vBuku.Failure("delete");
+                Console.WriteLine("Data tidak berhasil dihapus");
             }
         }
     }

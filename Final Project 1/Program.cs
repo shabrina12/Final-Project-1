@@ -15,7 +15,6 @@ public class Program
         BukuController bukuController = new BukuController(new BukuRepository(), new VBuku());
 
         string confirm;
-        int input;
 
         do
         {
@@ -29,10 +28,10 @@ public class Program
             Console.WriteLine("6. Exit");
             Console.Write("Input (1-6): ");
 
-            input = int.Parse(Console.ReadLine());
+            int choice = int.Parse(Console.ReadLine());
             Console.Clear();
 
-            switch (input)
+            switch (choice)
             {
                 case 1:
                     Console.WriteLine("================= BOOK INFORMATION ===================");

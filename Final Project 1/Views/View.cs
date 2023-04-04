@@ -32,21 +32,6 @@ namespace Final_Project_1.Views
             Console.WriteLine("Tahun: " + book.tahun);
         }
 
-        public void Success(string message)
-        {
-            Console.WriteLine($"Data berhasil {message}");
-        }
-
-        public void Failure(string message)
-        {
-            Console.WriteLine($"Data tidak berhasil {message}");
-        }
-
-        public void DataNotFound()
-        {
-            Console.WriteLine("Data Not Found!");
-        }
-
         internal void GetBukuById(List<Buku>? book)
         {
             throw new NotImplementedException();
