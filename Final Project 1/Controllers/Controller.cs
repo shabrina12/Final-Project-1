@@ -21,7 +21,7 @@ namespace Final_Project_1.Controllers
             _vBuku = vBuku;
         }
 
-        // GET ALL
+        // GET ALL BOOKS
         public void GetAllBuku()
         {
             var books = _bukuRepository.GetAllBuku();
